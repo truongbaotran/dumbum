@@ -1,0 +1,13 @@
+<header>
+ <app-header></app-header>
+</header>
+<main class="bg-light">
+  <app-spinner class="center-screen" style="z-index: 99;" [hidden]="!loading"></app-spinner>
+  <div class="container-lg ">
+    <router-outlet></router-outlet>
+  </div>
+</main>
+
+<footer>
+  <app-footer></app-footer>
+</footer>

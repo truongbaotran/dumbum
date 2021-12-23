@@ -1,0 +1,48 @@
+<nav class="navbar-expand-lg navbar-light">
+  <div class="d-flex flex-column">
+    <div class="bg-white d-flex flex-grow-1">
+      <div class="container py-1 nav-header">
+        <a class="navbar-brand" href="">
+          <img id="logo" src="../../assets/logo.png" alt="Logo DumBum">
+        </a>
+        <div id="navContent" class="collapse w-100 py-2">
+          <div id="navContentContainer" class="flex-betweent-center flex-grow-1 navbar-nav">
+            <div id="navContentTitle" class="flex-betweent-center w-50 px-0 navbar-nav">
+              <a class="nav-link" *ngFor="let item of mainPages.items" (click)="item.rediect()">{{item.value}}</a>
+            </div>
+            <hr>
+            <div id="navContentAction" class="flex-betweent-center fs-3" style="width: 200px; height: 50px;">
+              <i class="bi bi-cart2" matBadge="2"></i>
+              <hr class="vr h-100 m-0">
+              <a *ngIf="currentUser==null" class="nav-link" (click)="upSignUp()">Đăng nhập</a>
+              <img *ngIf="currentUser" class="rounded-circle small" [src]="currentUser.photoURL"
+                [title]="currentUser.displayName">
+            </div>
+          </div>
+        </div>
+        <a id="toggle" class="navbar-toggler border-0 mt-3" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+        </a>
+      </div>
+    </div>
+    <div class="bg-accent d-flex py-2">
+      <div class="container flex-betweent-center">
+        <button class="btn btn-accent rounded-hard" name="product"
+          *ngFor="let item of categories.items" (click)="item.rediect()">{{item.value}}</button>
+        <div id="search" class="input-group w-25 d-flex" style="min-width: max-content;">
+          <div class="form-floating small flex-grow-1">
+            <input type="search" class="form-control rounded-0 rounded-start pb-0 pt-3" name="search" id="search"
+              style="font-size: 0.8rem; max-height: 40px;" placeholder=" ">
+            <label class="pt-2" for="search">Bạn muốn tìm gì?</label>
+          </div>
+          <span class="rounded-top" style="width: 40px">
+            <button class="btn btn-primary rounded-0 rounded-end h-100 w-100" type="button">
+              <i class="bi bi-search"></i>
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
